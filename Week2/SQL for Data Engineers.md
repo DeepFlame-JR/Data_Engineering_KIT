@@ -16,6 +16,7 @@
 ### 구분
 - DDL(Data Definition Language, 데이터 정의어)  
     DB를 정의하는 언어. 테이블을 생성/제거/변경.
+<<<<<<< HEAD
 
     - `CREATE`: DB, Table 등을 생성
     ```sql
@@ -54,12 +55,26 @@
 
     - `DELETE FROM`: 데이터 삭제
 
+=======
+    - `CREATE`: DB, Table 등을 생성
+    - `ALTER`: Table을 수정
+    - `DROP`: DB, Table 등을 삭제 
+- DML(Data Manipulation Language, 데이터 조작어): 테이블 레코드 조작
+    - `SELECT`: 데이터 조회
+    - `INSERT INTO`: 데이터 삽입
+    - `UPDATE FROM`: 데이터 수정
+    - `DELETE FROM`: 데이터 삭제
+>>>>>>> 07044dbb982473c9376f1f3b9ea87404f782c500
         - `TRUNCATE`: 테이블 초기화 (WHERE, Transaction 지원 X)
 
 ## Basic SQL
 - 만약 반대 로직을 구현하고 싶다면 함수 앞에 `NOT`을 활용
 
+<<<<<<< HEAD
 - **WHERE/HAVING절**
+=======
+- **WHERE절**
+>>>>>>> 07044dbb982473c9376f1f3b9ea87404f782c500
     ```sql
     -- IN
     WHERE channel in (‘Google’, ‘Youtube’)
@@ -73,6 +88,7 @@
 
     -- BETWEEN
     WHERE BETWEEN '20220101' AND '20221231'
+<<<<<<< HEAD
 
     -- GROUP BY와 함께 활용할 때는 HAVING
     SELECT channel, COUNT(1)
@@ -81,6 +97,9 @@
     HAVING channel in ('Google','Facebook');  -- not in
     ```
 
+=======
+    ```
+>>>>>>> 07044dbb982473c9376f1f3b9ea87404f782c500
 - **String 함수**
     ```sql
     SELECT      
@@ -107,17 +126,27 @@
     ```sql
     -- DATE Conversion
     DATE('20220101') -- 결과: 2022-01-01
+<<<<<<< HEAD
     DATE_TRUNC('day', ts)
     CONVERT_TIMEZONE('America/Los_Angeles', ts)
     EXTRACT(HOUR FROM ts)
 
     TO_CHAR(ts, 'YYYY-MM')
 
+=======
+    DATE_TRUNC('day', created) AS day
+    CONVERT_TIMEZONE('America/Los_Angeles', ts)
+    
+>>>>>>> 07044dbb982473c9376f1f3b9ea87404f782c500
     -- Type Casting
     col1::int -- col1필드를 int로 type casting
     cast(col1 as int)
 
+<<<<<<< HEAD
     
+=======
+    -- TO_CHAR, TO_TIMESTAMP
+>>>>>>> 07044dbb982473c9376f1f3b9ea87404f782c500
     ```
 - **NULL**
     - '값이 존재하지 않음'을 의미
@@ -142,6 +171,7 @@
     SELECT COUNT(DISTINCT val) FROM TABLE -- 4
     ```
 
+<<<<<<< HEAD
 - **CASE WHEN**
     - 조건에 따른 값 설정을 한다
     ```sql
@@ -157,6 +187,8 @@
     ORDER BY 1;
     ```
 
+=======
+>>>>>>> 07044dbb982473c9376f1f3b9ea87404f782c500
 ## JOIN
 - 두 개의 테이블을 조건에 맞게 합침
 - 테이블의 중복 레코드가 없고 Primary Key의 Uniqueness가 보장됨 체크
@@ -174,6 +206,7 @@
     - `FULL OUTER JOIN`: 양쪽 테이블의 모든 레코드를 리턴
     - `SELF JOIN`: 동일한 테이블을 alias를 달리해서 자기자신과 조인
     - `CROSS JOIN`: 양쪽 테이블의 모든 레코드들의 조합을 리턴
+<<<<<<< HEAD
     <img src="https://t1.daumcdn.net/cfile/tistory/1451913F4F021EB826" width="700">
 
 ### UNION/UNION ALL
@@ -203,3 +236,6 @@ SELECT 'keeyong', 'han'
 -- elon	    musk
 -- keeyong	han
 ```
+=======
+    <img src="https://t1.daumcdn.net/cfile/tistory/1451913F4F021EB826" width="700">
+>>>>>>> 07044dbb982473c9376f1f3b9ea87404f782c500
